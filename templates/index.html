@@ -26,7 +26,7 @@
             })
             .then(response => response.json())
             .then(data => {
-                alert(data.message); // API'den gelen mesajı kullanıcıya göster
+                alert(data.message); 
             })
             .catch(error => {
                 console.error('Error:', error);
@@ -40,7 +40,7 @@
         <!-- Sulama butonu -->
         <button class="btn btn-primary mb-3" onclick="toggleWatering()">Sulama Aç/Kapat</button>
 
-        <!-- Table to show the most recent data -->
+       
         <table class="table table-bordered">
             <thead>
                 <tr>
@@ -70,12 +70,12 @@
             </tbody>
         </table>
 
-        <!-- Chart.js to display data graphically -->
+       
         <h3 class="mt-4">Sıcaklık, Nem ve Toprak Nem Oranı Grafiği</h3>
         <canvas id="environmentChart" width="400" height="200"></canvas>
 
         <script>
-            // Prepare the data from Flask's context
+            
             var timestamps = [];
             var temperatures = [];
             var humidities = [];
@@ -88,12 +88,12 @@
                 soilMoistures.push("{{ row['soil_moisture'] }}");
             {% endfor %}
 
-            // Chart.js configuration
+            
             var ctx = document.getElementById('environmentChart').getContext('2d');
             var environmentChart = new Chart(ctx, {
                 type: 'line',
                 data: {
-                    labels: timestamps, // X-axis will display timestamps
+                    labels: timestamps, 
                     datasets: [{
                         label: 'Sıcaklık (°C)',
                         data: temperatures,
